@@ -4,9 +4,9 @@ name: GAtest
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on approved pull request
-  pull_request_review:
-    types: [submitted]
+  pull_request:
+    types:
+      - closed
 
 
   # Allows you to run this workflow manually from the Actions tab
@@ -15,7 +15,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   approved:
-    if: github.event.review.state == 'approved'
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - run: echo "This PR was approved"
