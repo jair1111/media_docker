@@ -41,4 +41,4 @@ jobs:
           pip install requests
 
       - name: execute py script # run main.py
-        run: python api_request.py
+        run: python ./.github/workflows/api_request.py
