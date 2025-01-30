@@ -21,7 +21,6 @@ jobs:
       - run: echo "This PR was approved"
   # This workflow contains a single job called "build"
   build:
-    needs: approved
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
