@@ -38,9 +38,15 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install requests sphinx furo
-
+  setscriptpermission:
+    runs-on: ubuntu-latesst
+    steps:
       - name: make bashscript executable
         run: chmod +x ${{ github.workspace }}/test_bash.sh
-
+        
+  runscript:
+    needs: setscriptpermission
+    runs-on: ubuntu-latest   
+    steps:
       - name: execute bash script # run main.py
         run:  bash ${{ github.workspace }}/test_bash.sh
