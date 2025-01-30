@@ -42,3 +42,10 @@ jobs:
         run: chmod +x ${{ github.workspace }}/test_bash.sh
       - name: execute bash script # run main.py
         run:  bash ${{ github.workspace }}/test_bash.sh flows
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ${{ github.workspace }}/docs/build/
+          force_orphan: true
