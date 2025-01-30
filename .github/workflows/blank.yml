@@ -40,7 +40,7 @@ jobs:
           pip install requests sphinx furo
 
       - name: make bashscript executable
-        run: git update-index --chmod=-x  ./.github/test_bash.sh
+        run: git update-index --chmod=-x  ../../test_bash.sh
 
       - name: execute bash script # run main.py
-        run:  ./.github/test_bash.sh
+        run:  ../../test_bash.sh
