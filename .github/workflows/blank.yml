@@ -41,4 +41,4 @@ jobs:
       - name: make bashscript executable
         run: chmod +x ${{ github.workspace }}/test_bash.sh
       - name: execute bash script # run main.py
-        run:  bash ${{ github.workspace }}/test_bash.sh
+        run:  bash ${{ github.workspace }}/test_bash.sh flows
